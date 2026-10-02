@@ -4,7 +4,7 @@
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
 <meta name="theme-color" content="#D9E0D2" />
-<title>Tahsan Sorkar</title>
+<title>Tahsan Sarker</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Instrument+Serif&display=swap" rel="stylesheet">
@@ -108,12 +108,10 @@ h2{margin:34px 4px 12px;font:400 26px/1.1 "Instrument Serif",serif}
     <a id="b-mail" href="#"><svg fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><path d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/></svg>Email</a>
   </nav>
 
-  <h2>Social</h2>
-  <div class="grid" id="g-social"></div>
-  <h2>Gaming</h2>
-  <div class="grid" id="g-gaming"></div>
+  <h2>Connect</h2>
+  <div class="grid" id="g-links"></div>
 
-  <p class="foot">Tahsan Sorkar · Digital profile</p>
+  <p class="foot">Tahsan Sarker · Digital profile</p>
 </main>
 
 <div class="ov" id="qm" onclick="if(event.target===this)closeM('qm')">
@@ -129,43 +127,37 @@ h2{margin:34px 4px 12px;font:400 26px/1.1 "Instrument Serif",serif}
 <script>
 /* ================= EDIT HERE ================= */
 const CONFIG = {
-  fullName: "Tahsan Sorkar",
+  fullName: "Tahsan Sarker",
   avatar: "Tahsan.png",          // image ta index.html er same folder e rakho
-  phone: "",                       // e.g. +8801XXXXXXXXX
-  whatsapp: "",                    // e.g. 8801XXXXXXXXX (+ chara)
-  email: "",
+  phone: "+8801870549604",
+  whatsapp: "8801870549604",
+  email: "tahsannas@gmail.com",
 
   roles: [
     { label: "Student", text: "Always learning, in the classroom and out of it. Curious about how things work, disciplined about getting better, and building a strong foundation for whatever comes next." },
     { label: "Entrepreneur", text: "Thinks in ideas and builds them in small, steady steps. Working toward ventures of my own with an eye for good design, honest work, and long-term value." },
-    { label: "Gamer", text: "Competitive by nature and always up for a squad. PUBG is the main grind, with Steam and Epic libraries to match. Quick decisions and good teamwork come easy." }
+    { label: "Gamer", text: "Competitive by nature and always up for a squad. Game nights, ranked grinds and squad wins are part of the routine. Quick decisions and good teamwork come easy." }
   ],
 
   /* url = link khulbe | copy = tap korle copy hobe | handle = niche je text dekhabe */
-  social: [
-    { id: "instagram", title: "Instagram", handle: "", url: "" },
-    { id: "tiktok",    title: "TikTok",    handle: "", url: "" },
-    { id: "x",         title: "X",         handle: "", url: "" },
-    { id: "threads",   title: "Threads",   handle: "", url: "" }
-  ],
-  gaming: [
-    { id: "discord", title: "Discord",    handle: "", copy: "" },
-    { id: "steam",   title: "Steam",      handle: "", url: "" },
-    { id: "epic",    title: "Epic Games", handle: "", copy: "" },
-    { id: "pubg",    title: "PUBG",       handle: "", copy: "" }
+  links: [
+    { id: "instagram", title: "Instagram", handle: "@tahsannas",  url: "https://www.instagram.com/tahsannas/" },
+    { id: "facebook",  title: "Facebook",  handle: "Tahsan Sarker", url: "https://www.facebook.com/share/1EVKyA9g8X/?mibextid=wwXIfr" },
+    { id: "x",         title: "X",         handle: "@tahsannas",  url: "https://x.com/tahsannas?s=11" },
+    { id: "threads",   title: "Threads",   handle: "@tahsannas",  url: "https://www.threads.com/@tahsannas?invite=0" },
+    { id: "snapchat",  title: "Snapchat",  handle: "Add on Snapchat", url: "https://snapchat.com/t/dwWHoU0s" },
+    { id: "discord",   title: "Discord",   handle: "tahsan_a_s",  copy: "tahsan_a_s" }
   ]
 };
 /* ============================================= */
 
 const I = {
   instagram:'<svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>',
-  tiktok:'<svg viewBox="0 0 24 24" fill="currentColor"><path d="M12.525.02c1.31-.02 2.61-.01 3.91-.02.08 1.53.63 3.09 1.75 4.17 1.12 1.11 2.7 1.62 4.24 1.79v4.03c-1.44-.05-2.89-.35-4.2-.97-.57-.26-1.1-.59-1.62-.93-.01 2.92.01 5.84-.02 8.75-.08 1.4-.54 2.79-1.35 3.94-1.31 1.92-3.58 3.17-5.91 3.21-1.43.08-2.86-.31-4.08-1.03-2.02-1.19-3.44-3.37-3.65-5.71-.02-.5-.03-1-.01-1.49.18-1.9 1.12-3.72 2.58-4.96 1.66-1.44 3.98-2.13 6.15-1.72.02 1.48-.04 2.96-.04 4.44-.99-.32-2.15-.23-3.02.37-.63.41-1.11 1.04-1.36 1.75-.21.51-.15 1.07-.14 1.61.24 1.64 1.82 3.02 3.5 2.87 1.12-.01 2.19-.66 2.77-1.61.19-.33.4-.67.41-1.06.1-1.79.06-3.57.07-5.36.01-4.03-.01-8.05.02-12.07z"/></svg>',
   x:'<svg viewBox="0 0 24 24" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>',
   threads:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="9.5"/><text x="12" y="16.6" text-anchor="middle" font-size="12.5" font-weight="700" fill="currentColor" stroke="none" font-family="DM Sans,sans-serif">@</text></svg>',
+  facebook:'<svg viewBox="0 0 24 24" fill="currentColor"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>',
+  snapchat:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linejoin="round" stroke-linecap="round"><path d="M5 19.5c1.6-.4 2.4-1.3 2.5-2.7V8.2C7.5 5.6 9.3 3.5 12 3.5s4.5 2.1 4.5 4.7v8.6c.1 1.4.9 2.3 2.5 2.7-1.6.6-2.6.2-3.5.9-.7.5-1.6.9-3.5.9s-2.8-.4-3.5-.9c-.9-.7-1.9-.3-3.5-.9z"/></svg>',
   discord:'<svg viewBox="0 0 24 24" fill="currentColor"><path d="M20.317 4.37a19.791 19.791 0 0 0-4.885-1.515.074.074 0 0 0-.079.037c-.21.375-.444.864-.608 1.25a18.27 18.27 0 0 0-5.487 0 12.64 12.64 0 0 0-.617-1.25.077.077 0 0 0-.079-.037A19.736 19.736 0 0 0 3.677 4.37a.07.07 0 0 0-.032.027C.533 9.046-.32 13.58.099 18.057a.082.082 0 0 0 .031.057 19.9 19.9 0 0 0 5.993 3.03.078.078 0 0 0 .084-.028c.462-.63.874-1.295 1.226-1.994.021-.041.001-.09-.041-.106a13.107 13.107 0 0 1-1.872-.892.077.077 0 0 1-.008-.128 10.2 10.2 0 0 0 .372-.292.074.074 0 0 1 .077-.01c3.928 1.793 8.18 1.793 12.061 0a.074.074 0 0 1 .078.01c.12.098.246.198.373.292a.077.077 0 0 1-.006.127 12.299 12.299 0 0 1-1.873.892.077.077 0 0 0-.041.107c.36.698.772 1.362 1.225 1.993a.076.076 0 0 0 .084.028 19.839 19.839 0 0 0 6.002-3.03.077.077 0 0 0 .032-.054c.5-5.177-.838-9.674-3.549-13.66a.061.061 0 0 0-.031-.028zM8.02 15.33c-1.183 0-2.157-1.085-2.157-2.419 0-1.333.956-2.419 2.157-2.419 1.21 0 2.176 1.096 2.157 2.42 0 1.333-.956 2.418-2.157 2.418zm7.975 0c-1.183 0-2.157-1.085-2.157-2.419 0-1.333.955-2.419 2.157-2.419 1.21 0 2.176 1.096 2.157 2.42 0 1.333-.946 2.418-2.157 2.418z"/></svg>',
-  steam:'<svg viewBox="0 0 24 24" fill="currentColor"><path d="M11.979 0C5.678 0 .511 4.86.022 11.037l6.432 2.658c.545-.371 1.203-.59 1.912-.59.063 0 .125.004.188.006l2.861-4.142V8.91c0-2.495 2.028-4.524 4.524-4.524 2.494 0 4.524 2.03 4.524 4.524s-2.03 4.524-4.524 4.524c-.104 0-.206-.007-.31-.014l-4.082 2.912c.005.084.01.168.01.253 0 1.856-1.505 3.361-3.362 3.361-1.637 0-3.003-1.17-3.302-2.723L.283 15.31C1.611 20.354 6.368 24 11.979 24c6.627 0 12-5.373 12-12s-5.373-12-12-12z"/></svg>',
-  epic:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M5 3h14v12.5L12 21l-7-5.5z"/><path d="M9.5 8h5M9.5 8v5.5h5M9.5 10.8h4"/></svg>',
-  pubg:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round"><circle cx="12" cy="12" r="6.5"/><path d="M12 2v5M12 17v5M2 12h5M17 12h5"/><circle cx="12" cy="12" r="1" fill="currentColor"/></svg>'
 };
 
 const $ = id => document.getElementById(id);
@@ -215,13 +207,13 @@ document.addEventListener('DOMContentLoaded',()=>{
     a.innerHTML=`<span class="ico">${I[l.id]}</span><span><b>${l.title}</b><small>${l.handle||(l.copy?'Tap to copy':l.url?'Open profile':'Not added yet')}</small></span>`;
     box.appendChild(a);
   });
-  build(CONFIG.social,$('g-social'));build(CONFIG.gaming,$('g-gaming'));
+  build(CONFIG.links,$('g-links'));
 
   if(window.QRCode)new QRCode($('qr'),{text:location.href,width:160,height:160,colorDark:'#243026',colorLight:'#FFFFFF',correctLevel:QRCode.CorrectLevel.H});
 });
 
 function saveVCard(){
-  const p=CONFIG.fullName.split(' '),urls=[...CONFIG.social,...CONFIG.gaming].filter(l=>/^https?:/.test(l.url)).map(l=>'URL:'+l.url);
+  const p=CONFIG.fullName.split(' '),urls=CONFIG.links.filter(l=>/^https?:/.test(l.url)).map(l=>'URL:'+l.url);
   const v=['BEGIN:VCARD','VERSION:3.0',`FN:${CONFIG.fullName}`,`N:${p.slice(1).join(' ')};${p[0]};;;`,'TITLE:Student | Entrepreneur | Gamer',
     CONFIG.phone&&`TEL;TYPE=CELL:${CONFIG.phone}`,CONFIG.email&&`EMAIL:${CONFIG.email}`,...urls,'END:VCARD'].filter(Boolean).join('\n');
   const a=document.createElement('a');a.href=URL.createObjectURL(new Blob([v],{type:'text/vcard'}));a.download=CONFIG.fullName.replace(/\s+/g,'_')+'.vcf';
