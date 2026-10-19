@@ -38,25 +38,26 @@ svg{display:block}
 h1{margin:0;font:400 clamp(34px,10.4vw,46px)/1.05 var(--serif);letter-spacing:-.01em}
 .sub{margin:6px 0 0;color:var(--mu);font-size:13.5px}
 
-.tabs{margin-top:30px;display:grid;grid-template-columns:repeat(3,1fr);gap:4px;padding:4px;border-radius:999px;background:rgba(255,255,255,.5);border:1px solid var(--line)}
-.tabs button{padding:10px 4px;border-radius:999px;font-size:13px;font-weight:600;color:var(--mu);transition:background-color .2s,color .2s}
-.tabs button[aria-selected=true]{background:#fff;color:var(--ink);box-shadow:0 2px 8px -3px rgba(36,48,38,.3)}
+.tabs{margin-top:30px;display:grid;grid-template-columns:repeat(2,1fr);gap:4px;padding:4px;border-radius:999px;background:rgba(255,255,255,.5);border:1px solid var(--line)}
+.tabs button{padding:10px 4px;border-radius:999px;font-size:13px;font-weight:600;color:var(--mu);transition:background-color .25s var(--e),color .25s var(--e),transform .25s var(--e)}
+.tabs button[aria-selected=true]{background:#fff;color:var(--ink);box-shadow:0 2px 8px -3px rgba(36,48,38,.3);transform:scale(1.015)}
+.tabs button:active{transform:scale(.96)}
 .desc{margin:16px 6px 0;min-height:108px;color:#3C4A3E;font-size:15.5px}
-.desc.sw{animation:sw .3s var(--e)}
-@keyframes sw{from{opacity:0}}
-.cta{margin-top:10px;width:100%;height:54px;display:flex;align-items:center;justify-content:center;gap:10px;border-radius:999px;background:var(--moss);color:#EEF2E8;font-weight:600;box-shadow:0 8px 14px -10px rgba(36,48,38,.7);transition:transform .12s}
+.desc.sw{animation:sw .35s var(--e)}
+@keyframes sw{from{opacity:0;transform:translateY(6px)}}
+.cta{margin-top:10px;width:100%;height:54px;display:flex;align-items:center;justify-content:center;gap:10px;border-radius:999px;background:var(--moss);color:#EEF2E8;font-weight:600;box-shadow:0 8px 14px -10px rgba(36,48,38,.7);transition:transform .2s var(--e),box-shadow .2s var(--e)}
 .cta svg{width:20px;height:20px}
-.cta:active{transform:scale(.985)}
+.cta:active{transform:scale(.97)}
 .quick{margin-top:10px;display:grid;grid-template-columns:repeat(3,1fr);border-radius:22px;background:var(--glass);border:1px solid var(--line);overflow:hidden}
-.quick a{display:flex;flex-direction:column;align-items:center;gap:7px;padding:15px 4px 13px;font-size:12.5px;font-weight:600}
+.quick a{display:flex;flex-direction:column;align-items:center;gap:7px;padding:15px 4px 13px;font-size:12.5px;font-weight:600;transition:background-color .2s var(--e),transform .15s var(--e)}
 .quick a+a{border-left:1px solid var(--line)}
 .quick svg{width:22px;height:22px}
-.quick a:active{background:var(--glass2)}
+.quick a:active{background:var(--glass2);transform:scale(.96)}
 
 h2{margin:34px 4px 12px;font:400 26px/1.1 var(--serif)}
 .grid{display:grid;grid-template-columns:1fr 1fr;gap:10px}
-.tile{display:flex;flex-direction:column;gap:14px;min-width:0;padding:14px;border-radius:22px;background:var(--glass);border:1px solid var(--line);transition:transform .12s,background-color .15s}
-.tile:active{transform:scale(.98);background:var(--glass2)}
+.tile{display:flex;flex-direction:column;gap:14px;min-width:0;padding:14px;border-radius:22px;background:var(--glass);border:1px solid var(--line);transition:transform .18s var(--e),background-color .2s var(--e),box-shadow .2s var(--e)}
+.tile:active{transform:scale(.97);background:var(--glass2)}
 .ico{width:42px;height:42px;display:grid;place-items:center;border-radius:50%;background:var(--moss);color:#E4EBDB}
 .ico svg{width:20px;height:20px}
 .tile b{display:block;font-size:14.5px;font-weight:600;line-height:1.25}
@@ -77,7 +78,20 @@ h2{margin:34px 4px 12px;font:400 26px/1.1 var(--serif)}
 #toast{position:fixed;left:50%;top:calc(env(safe-area-inset-top,0px) + 14px);z-index:30;transform:translate(-50%,-90px);padding:11px 18px;border-radius:999px;background:var(--moss);color:#EEF2E8;font-size:13px;font-weight:600;transition:transform .3s var(--e);pointer-events:none;white-space:nowrap}
 #toast.show{transform:translate(-50%,0)}
 @media (max-width:350px){.wrap{padding-left:14px;padding-right:14px}.hero{width:90%}.grid{gap:8px}.tile{padding:12px}}
-@media (prefers-reduced-motion:reduce){.desc.sw{animation:none}*{transition-duration:.01ms!important}}
+
+.wrap>*{animation:rise .55s var(--e) backwards}
+.wrap>*:nth-child(1){animation-delay:.02s}
+.wrap>*:nth-child(2){animation-delay:.07s}
+.wrap>*:nth-child(3){animation-delay:.13s}
+.wrap>*:nth-child(4){animation-delay:.19s}
+.wrap>*:nth-child(5){animation-delay:.24s}
+.wrap>*:nth-child(6){animation-delay:.28s}
+.wrap>*:nth-child(7){animation-delay:.32s}
+.wrap>*:nth-child(8){animation-delay:.36s}
+.wrap>*:nth-child(9){animation-delay:.4s}
+@keyframes rise{from{opacity:0;transform:translateY(12px)}}
+
+@media (prefers-reduced-motion:reduce){.desc.sw{animation:none}.wrap>*{animation:none}*{transition-duration:.01ms!important;animation-duration:.01ms!important;animation-delay:0s!important}}
 </style>
 </head>
 <body>
@@ -96,7 +110,7 @@ h2{margin:34px 4px 12px;font:400 26px/1.1 var(--serif)}
     </div>
     <div class="who">
       <h1 id="name"></h1>
-      <p class="sub">Student · Entrepreneur · Gamer</p>
+      <p class="sub">Student · Entrepreneur</p>
     </div>
   </section>
 
@@ -138,8 +152,7 @@ const CONFIG = {
 
   roles: [
     { label: "Student", text: "Always learning, in the classroom and out of it. Curious about how things work, disciplined about getting better, and building a strong foundation for whatever comes next." },
-    { label: "Entrepreneur", text: "Thinks in ideas and builds them in small, steady steps. Working toward ventures of my own with an eye for good design, honest work, and long-term value." },
-    { label: "Gamer", text: "Competitive by nature and always up for a squad. Game nights, ranked grinds and squad wins are part of the routine. Quick decisions and good teamwork come easy." }
+    { label: "Entrepreneur", text: "Thinks in ideas and builds them in small, steady steps. Working toward ventures of my own with an eye for good design, honest work, and long-term value." }
   ],
 
   /* url = link khulbe | copy = tap korle copy hobe | handle = niche je text dekhabe */
@@ -228,7 +241,7 @@ document.addEventListener('DOMContentLoaded',()=>{
 
 function saveVCard(){
   const p=CONFIG.fullName.split(' '),urls=CONFIG.links.filter(l=>/^https?:/.test(l.url)).map(l=>'URL:'+l.url);
-  const v=['BEGIN:VCARD','VERSION:3.0',`FN:${CONFIG.fullName}`,`N:${p.slice(1).join(' ')};${p[0]};;;`,'TITLE:Student | Entrepreneur | Gamer',
+  const v=['BEGIN:VCARD','VERSION:3.0',`FN:${CONFIG.fullName}`,`N:${p.slice(1).join(' ')};${p[0]};;;`,'TITLE:Student | Entrepreneur',
     CONFIG.phone&&`TEL;TYPE=CELL:${CONFIG.phone}`,CONFIG.email&&`EMAIL:${CONFIG.email}`,...urls,'END:VCARD'].filter(Boolean).join('\n');
   const a=document.createElement('a');a.href=URL.createObjectURL(new Blob([v],{type:'text/vcard'}));a.download=CONFIG.fullName.replace(/\s+/g,'_')+'.vcf';
   document.body.appendChild(a);a.click();a.remove();toast('Contact saved');
